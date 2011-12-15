@@ -16,7 +16,7 @@ git config --global user.name "$name"
 
 # Setup remotes/aliases
 git remote add mediawiki ssh://$username@gerrit.wikimedia.org:29418/test/mediawiki/core
-git config alias.push-for-review "push puppet HEAD:refs/for/master"
+git config alias.push-for-review "push mediawiki HEAD:refs/for/master"
 
 TOPLEVEL=`git rev-parse --show-toplevel`
 which curl
