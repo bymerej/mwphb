@@ -657,6 +657,7 @@ class Language {
 			return $allNames;
 		}
 
+		global $IP;
 		$names = array();
 		$dir = opendir( "$IP/languages/messages" );
 		while ( false !== ( $file = readdir( $dir ) ) ) {
