@@ -1,7 +1,5 @@
 {
   "project_id" : "mediawiki",
-  "conduit_uri" : "http://phabricator.wmflabs.org/api/",
-  "lint_engine" : "PhabricatorLintEngine",
-  "unit_engine" : "PhutilUnitTestEngine"
+  "conduit_uri" : "http://phabricator.wmflabs.org/api/"
 }
 
