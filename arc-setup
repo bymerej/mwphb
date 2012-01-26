@@ -1,0 +1,43 @@
+#!/bin/bash
+
+which arc >> /dev/null
+
+if [ "$?" == "0" ]
+then
+	echo "arc is already installed"
+#	exit 1
+fi
+
+# This halts the script on errors
+set -e
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+echo "Where do you want arcanist installed?"
+read -e -i "$HOME/.arc" installPath
+
+mkdir -p $installPath
+cd $installPath
+
+git clone git://github.com/facebook/libphutil.git
+git clone git://github.com/facebook/arcanist.git
+git clone git://github.com/johnduhart/libphutil-mediawiki.git
+
+# Add arc to the PATH
+echo "
+# Arcanist path
+PATH=\"\$PATH:$installPath/arcanist/bin\"
+source \"$installPath/arcanist/resources/shell/bash-completion\"" >> ~/.profile
+source ~/.profile
+
+cd $DIR
+
+echo "[commit]
+	template = $installPath/libphutil-mediawiki/resources/git/commit-template.txt" >> .git/config
+
+# Install the cert for the MediaWiki phabricator
+arc install-certificate
+
+echo ""
+echo ""
+echo "DONE! Please run 'source ~/.profile' for the PATH changes to take affect"
