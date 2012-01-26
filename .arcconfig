@@ -1,5 +1,8 @@
 {
   "project_id" : "mediawiki",
   "conduit_uri" : "http://phabricator.wmflabs.org/api/",
-  "lint_engine": "MediawikiLintEngine"
+  "lint_engine": "MediawikiLintEngine",
+  "phutil_libraries" : {
+    "mediawiki" : "libphutil-mediawiki/src/"
+  }
 }
