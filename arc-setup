@@ -27,8 +27,8 @@ git clone git://github.com/johnduhart/libphutil-mediawiki.git
 cat <<EOF >> ~/.profile
 
 # Arcanist path
-PATH="\$PATH:$installPath/arcanist/bin"
-source "$installPath/arcanist/resources/shell/bash-completion"
+PATH="\$PATH:"'$installPath/arcanist/bin'
+source '$installPath/arcanist/resources/shell/bash-completion'
 source ~/.profile
 EOF
 
