@@ -24,9 +24,10 @@ git clone git://github.com/facebook/arcanist.git
 git clone git://github.com/johnduhart/libphutil-mediawiki.git
 
 # Add arc to the PATH
-cat <<'EOF' >> ~/.profile
+cat <<EOF >> ~/.profile
+
 # Arcanist path
-PATH="$PATH:$installPath/arcanist/bin"
+PATH="\$PATH:$installPath/arcanist/bin"
 source "$installPath/arcanist/resources/shell/bash-completion"
 source ~/.profile
 EOF
